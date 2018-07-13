@@ -1,13 +1,14 @@
-import { expect } from 'chai';
-import { shallowMount } from '@vue/test-utils';
+import Vuex from 'vuex';
+import { mount, createLocalVue } from '@vue/test-utils';
 import HelloWorld from '@/components/HelloWorld.vue';
 
 describe('HelloWorld.vue', () => {
   it('renders props.msg when passed', () => {
     const msg = 'new message';
-    const wrapper = shallowMount(HelloWorld, {
-      propsData: { msg },
+    const wrapper = mount(HelloWorld, {
     });
-    expect(wrapper.text()).to.include(msg);
+
+    // console.log(wrapper.find('.sc-table').text());
+    // expect(wrapper.text()).to.include(msg);
   });
 });
